@@ -1,5 +1,5 @@
 # 2024-IA22-2TRI
-Bom dia criançada👶(leia, se não vc sera reprovado na disciplina)
+Bom dia criançada (leia, se não vc sera reprovado na disciplina)
 
 Obs: A partir de agora, pare tudo(joguinhos, conversinhas e desinstale o insta e tiktok)
 
@@ -10,7 +10,7 @@ Obs: A partir de agora, pare tudo(joguinhos, conversinhas e desinstale o insta e
 - criar uma aplicação
 - e como rodar a aplicação no servidor
 
-> Voce deve estar se perguntando "o que são essas coisas?"🤔. Então continue lendo para entender...
+> Voce deve estar se perguntando "o que são essas coisas?". Então continue lendo para entender...
 
 ## 1° TypeScript
 O TypeScript is a typed superset of **JavaScript** that compiles to plain JavaScript. It offers classes, modules, and interfaces to help you build robust components. (Uma extensão ou um "plus" do Javascript)
@@ -19,7 +19,7 @@ O TypeScript is a typed superset of **JavaScript** that compiles to plain JavaSc
 O Node is a platform for building fast and scalable server applications using JavaScript(É a base pra rodar um app no servidor). Node.js is the runtime and npm is the Package Manager for Node.js modules.(Exemplo: o node é o seu celular android, e o npm é a play store, aonde vc baixa e instala apps...)
 
 ## 3° Servidor e aplicação
-Um servidor nada mais é que uma máquina que vai ofertar para algumas ou várias pessoas um serviço ou aplicação. Como exemplo, o youtube, ele oferece o serviço de streaming(assistir vídeos) e pra isso acontecer ele armazena os vídeos em ***MÁQUINAS SUPER-MEGA-FODAS***:
+Um servidor nada mais é que uma máquina que vai ofertar para algumas ou várias pessoas um serviço ou aplicação. Como exemplo, o youtube, ele oferece o serviço de streaming(assistir vídeos) e pra isso acontecer ele armazena os vídeos em ***MÁQUINAS SUPER-MEGA-FUDAS***:
 ![Exemplo de servidor](./imgs/server.jpg "Servidor")
 
 # ALGUNS PRÉ-REQUISITOS
@@ -37,17 +37,17 @@ Um servidor nada mais é que uma máquina que vai ofertar para algumas ou vária
     
     - Mas se ***NÃO ESTIVER*** instalado, ai ferrou, vc tera que baixar e instalar. Segue o link: https://nodejs.org/en e clique em "Download". Após isso apenas clique no botão "Next" na janela do instalador. No ***LINUX*** do instituo vc n vai conseguir fazer a proeza de instalar. Porém se vc estiver na sua casa, instale com o comando: ```sudo apt install nodejs -y```
 ---
-# CHEGOU A HORA DE HACKEAR A PROGRAMAÇÃO
+# CHEGOU A HORA DE HACKEAR A PROGRAMAÇÃO 😈
 
 1. Crie uma pasta com este nome: projeto
 2. Abra o Visual Studio Code
 3. Abra a pasta que vc criou antes por dentro do Visual Studio Code
 4. Aperta essas duas teclas juntas (Ctrl + '):
-- foto das teclas
+![teclas](./imgs/teclado.jpg "abrir o terminal")
 5. Sera aberta uma caixa muito semelhante ao terminal que já vimos anteriormente:
-- foto da caixa
+![terminal](./imgs/caixa_preta.png "terminal aberto no vscode")
 
-# AGORA VAMOS DIGITAR COISAS NO TERMINAL😈
+# AGORA VAMOS DIGITAR COISAS NO TERMINAL 
 
 ***PRIMEIRAMENTE*** vamos iniciar o projeto e criar o arquivo de configuração. Fazemos isso tudo com apenas um comando:
 ```typescript
