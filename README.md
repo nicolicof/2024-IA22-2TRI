@@ -36,7 +36,7 @@ Um servidor é um COMPUTADOR que vai ofertar um serviço ou aplicação.
    node -v
    ```
    - Se estiver instalado deve aparecer algo como:
-   ![node_version](./imgs/nodevv.png "resultado do node --version")
+   ![node_version](./imgs/nodev.png)
 
 > Se vc estiver em um sistema ***LINUX***, busque pelo programa "terminal" e siga o mesmo passo-a-passo anterior
 # CHEGOU A HORA DE PROGRAMAR 😈
@@ -84,10 +84,10 @@ code .
 ```
 # AGORA VAMOS PROGRAMAR
 Se tudo tiver ocorrido bem, vc vai ver algo assim:
-![vscode](./imgs/vs.png"vs")
+![vscode](./imgs/code.png"vs")
 
 1. Crie um arquivo dentro da pasta "src", e nomeie ele exatamente com esse nome: **app.ts**
-![app.ts](./imgs/app.png"vs")
+![app.ts](./imgs/appts.png"vs")
 
 2. Abra o arquivo tsconfig.json e APAGUE TODO O CÓDIGO
 3. Copie esse código abaixo e cole dentro arquivo(tsconfig.json)
