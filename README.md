@@ -87,7 +87,7 @@ Se tudo tiver ocorrido bem, vc vai ver algo assim:
 ![vscode](./imgs/code.png)
 
 1. Crie um arquivo dentro da pasta "src", e nomeie ele exatamente com esse nome: **app.ts**
-![app.ts](./imgs/appts.png)
+![app.ts](./imgs/appts.PNG)
 
 2. Abra o arquivo tsconfig.json e APAGUE TODO O CÓDIGO
 3. Copie esse código abaixo e cole dentro arquivo(tsconfig.json)
