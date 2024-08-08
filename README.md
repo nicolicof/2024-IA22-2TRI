@@ -1,7 +1,8 @@
-# 2024-IA22-2TRI
-Bom dia criançada (leia, se não vc sera reprovado na disciplina)
 
-Obs: A partir de agora, pare tudo(joguinhos, conversinhas e desinstale o insta e tiktok)
+# 2024-IA22-2TRI
+**(LEIA TUDINHO)**
+Bom dia novato(a), vamos rodar uma aplicação hoje. Para agilizar, 
+NÃO FECHE nenhuma janela/tarefa/aplicativo/terminal que eu lhe pedir para abrir. **ARIGATO**🙏
 
 ### Vamos aprender:
 - typescript
@@ -10,68 +11,58 @@ Obs: A partir de agora, pare tudo(joguinhos, conversinhas e desinstale o insta e
 - criar uma aplicação
 - e como rodar a aplicação no servidor
 
-> Voce deve estar se perguntando "o que são essas coisas?". Então continue lendo para entender...
+## 1° Oq é TypeScript
+Ele é uma extensão **tipada** do JavaScript que compila para JavaScript puro. Da suporte a classes, módulos e interfaces.
 
-## 1° TypeScript
-O TypeScript is a typed superset of **JavaScript** that compiles to plain JavaScript. It offers classes, modules, and interfaces to help you build robust components. (Uma extensão ou um "plus" do Javascript)
+## 2° Oq é Node, npm e Node.js
+1. Node é uma plataforma que constroi aplicações de servidor
+2. Node.js é o ambiente de execução 
+3. npm é o gerenciador de pacotes para módulos do Node.js
+> O Node.js é como seu celular Android, e o npm é a Play Store, onde você baixa e instala apps
 
-## 2° Node.js
-O Node is a platform for building fast and scalable server applications using JavaScript(É a base pra rodar um app no servidor). Node.js is the runtime and npm is the Package Manager for Node.js modules.(Exemplo: o node é o seu celular android, e o npm é a play store, aonde vc baixa e instala apps...)
+## 3° Oq é "servidor"
+Um servidor é um COMPUTADOR que vai ofertar um serviço ou aplicação.
+> Como exemplo, o youtube, ele oferece o serviço de streaming e pra isso acontecer ele armazena os vídeos em ***MÁQUINAS SUPER-MEGA-FUDAS***👇
 
-## 3° Servidor e aplicação
-Um servidor nada mais é que uma máquina que vai ofertar para algumas ou várias pessoas um serviço ou aplicação. Como exemplo, o youtube, ele oferece o serviço de streaming(assistir vídeos) e pra isso acontecer ele armazena os vídeos em ***MÁQUINAS SUPER-MEGA-FUDAS***:
 ![Exemplo de servidor](./imgs/server.jpg "Servidor")
 
 # ALGUNS PRÉ-REQUISITOS
-1. Para executarmos o Node e escrevermos códigos legais em TypeScript, vc prescisa instalar o node (óbvio)
-    - Se vc esta no instituto, talvez já esteja instalado no pc. Para verificar se está, pesquise na barra de busca do Windows por "cmd". Sera aberta uma janela preta. Tipo essa 👇
-    ![Terminal](./imgs/cmd.jpg "CMD")
-    - Agora copie e cole esse código na janela preta:
-        ```
-        node --version
-        ```
-        E aperte a tecla Enter no teclado. Se estiver instalado deve aparecer algo como:
-        ![node_version](./imgs/nodevv.png "resultado do node --version")
-        
-    - Se por obséquio vc estiver em um sistema ***LINUX***, vc deve buscar pelo programa "terminal", e seguir o mesmo passo-a-passo anterior (apartir do copiar e colar código)
-    
-    - Mas se ***NÃO ESTIVER*** instalado, ai ferrou, vc tera que baixar e instalar. Segue o link: https://nodejs.org/en e clique em "Download". Após isso apenas clique no botão "Next" na janela do instalador. No ***LINUX*** do instituo vc n vai conseguir fazer a proeza de instalar. Porém se vc estiver na sua casa, instale com o comando: ```sudo apt install nodejs -y```
----
-# CHEGOU A HORA DE HACKEAR A PROGRAMAÇÃO 😈
+1. Para executarmos o Node e programarmos em TypeScript vc prescisa ter ele no computador
 
-1. Crie uma pasta com este nome: projeto
-2. Abra o Visual Studio Code
-3. Abra a pasta que vc criou antes por dentro do Visual Studio Code
-4. Aperta essas duas teclas juntas (Ctrl + '):
-![teclas](./imgs/teclado.jpg "abrir o terminal")
-5. Sera aberta uma caixa muito semelhante ao terminal que já vimos anteriormente:
-![terminal](./imgs/caixa_preta.png "terminal aberto no vscode")
-6. Acesse a pasta para inicar o projeto com:
-```sh
+    - No instituto, o Node já pode estar instalado. Para verificar, busque "cmd" no Windows. E procure por essa janela 👇 
+    ![Terminal](./imgs/cmd.jpg "CMD")
+
+    - Agora copie e cole esse código👇 na janela preta e aperte ENTER:
+    ```
+   node -v
+   ```
+   - Se estiver instalado deve aparecer algo como:
+        ![node_version](./imgs/nodevv.png "resultado do node --version")
+
+> Se vc estiver em um sistema ***LINUX***, busque pelo programa "terminal" e siga o mesmo passo-a-passo anterior
+# CHEGOU A HORA DE PROGRAMAR 😈
+1. Ainda no terminal anterior, crie uma pasta chamada "projeto" e entre nela com o comando abaixo👇:
+```
+mkdir projeto && cd projeto
+```
+
+2. Agora vamos iniciar o projeto e criar o arquivo de configuração. Fazemos isso com um comando:
+```
 npm init -y
 ```
+3.  Vamos instalar alguns pacotes para rodarmos a nossa aplicação dentro de um servidor:
+	- express [O servidor]
+	- cors [politica que permite o compartilhamento de dados entre sites]
+	- sqlite3 [driver que permite a conexão entre o Node e um banco de dados SQLite]
+	- sqlite [um "facilitador", pra vc n escrever um código muito paia]
 
-# AGORA VAMOS DIGITAR COISAS NO TERMINAL 
-
-***PRIMEIRAMENTE*** vamos iniciar o projeto e criar o arquivo de configuração. Fazemos isso tudo com apenas um comando:
-```typescript
-cd 
-```
----
-***SEGUNDAMENTE*** vamos instalar alguns pacotes para rodarmos a nossa aplicação dentro de um servidor, sendo elas:
-- express [framework que vai dar uma ajudada pra criar a nossa aplicação]
-- cors [habilita uma politica no servidor express, que permite diferentes sites compartilhem informações com o seu (óbvio)]
-- sqlite3 [driver que permite a conexão/operações entre o Node e um banco de dados SQLite]
-- sqlite [é um "facilitador" do driver acima, pra vc n escrever um código muito paia]
-
-fazemos a instalação com esse código:
+Para instalar, rode o comando abaixo
 ```typescript
 npm install express cors sqlite3 sqlite
 ```
----
-***TERCEIRAMENTE*** vamos instalar mais pacotes, porem com um diferencial, agora estamos instalando coisas no MODO DESENVOLVEDOR(pois esses pacotes só tem sentido para nós programadores e facilitam a nossa vida). Essas pacotes são:
-- typescript [a linguagem supertipada que vamos usar]
-- nodemon [um F5 automático para ajudar no nosso desenvolvimento]
+4. Vamos instalar mais pacotes, agora no MODO DESENVOLVEDOR (eles facilitam a nossa vida de programadores). Esses pacotes são:
+- typescript [a linguagem]
+- nodemon [um F5 automático para ajudar no desenvolvimento]
 - ts-node [permite executar o typescript pelo node]
 - @types/express [informações para o typescript entender como usar o express]
 - @types/cors [informações para o typescript entender como usar o cors]
@@ -80,28 +71,27 @@ instale com esse comando:
 ```typescript
 npm install --save-dev typescript nodemon ts-node @types/express @types/cors
 ```
----
-***QUARTAFEIRAMENTE*** vamos criar um arquivo de configuração para o typescript definir como o compilador vai tranformar o código feito em TYPESCRIPT em Javascript. Digite:
+5.  AGORA vamos criar um arquivo de configuração para o typescript, com o comando abaixo 👇
 ```typescript
 npx tsc --init
 ```
----
-***QUINTAFEIRAMENTE*** vamos criar uma pasta dentro da sua pasta chamada "projeto", vamos chamalha de "src", para isso digite:
-```sh
+6. Crie uma pasta chamada "src"👇
+```typescript
 mdkir src
 ```
----
-***SEXTAMENTE*** vamos criar o arquivo principal do nosso projeto. Se vc estiver no Windows, digite:
-```powershell
-powershell New-Item -Path ".\scr\app.ts" -ItemType "file"
+7. Vamos abrir o VSCODE . **[n esqueça do pontinho]**👇
+```typescript
+code .
 ```
-Se estivor no ***LINUX***:
-```bash
-touch src/app.ts
-```
----
-# AGORA VAMOS CODAR
-Abra o tsconfig.json, de um Ctrl + A, e aperte a tecla Del do seu teclado. E copie esse codigo inteiro e cole dentro:
+# AGORA VAMOS PROGRAMAR
+Se tudo tiver ocorrido bem, vc vai ver algo assim:
+![vscode](./imgs/vs.png"vs")
+
+1. Crie um arquivo dentro da pasta "src", e nomeie ele exatamente com esse nome: **app.ts**
+![app.ts](./imgs/app.png"vs")
+
+2. Abra o arquivo tsconfig.json e APAGUE TODO O CÓDIGO
+3. Copie esse código abaixo e cole dentro arquivo(tsconfig.json)
 ```json
 {
   "compilerOptions": {
@@ -116,22 +106,18 @@ Abra o tsconfig.json, de um Ctrl + A, e aperte a tecla Del do seu teclado. E cop
   }
 }
 ```
----
-Abra o package.json e adicione esse código:
+4. Abra o "package.json" e procure por um tal de "scripts" e adicione esse código dentro dele:
 ```json
-"dev": "npx nodemon src/app.ts"
+"dev": "npx nodemon src/app.ts",
 ```
-dentro do bloco "scripts", deve ficar parecido com isso:
-```json
-"scripts": {
-  "dev": "npx nodemon src/app.ts"
-}
-```
-----
-Agora vc vai dentro da pasta "src" e vai colar esse código no arquivo app.ts:
+Deve ficar assim👇
+![package.json](./imgs/package.png"package")
+
+5. Abra o "app.ts" que esta dentro da pasta "src" e cole esse código:
 ```typescript
 import express from 'express';
 import cors from 'cors';
+import { connect } from './database';
 
 const port = 3333;
 const app = express();
@@ -143,12 +129,134 @@ app.get('/', (req, res) => {
   res.send('Hello World');
 });
 
+app.post('/users', async (req, res) => {
+    const db = await connect();
+    const { name, email } = req.body;
+
+    const result = await db.run('INSERT INTO users (name, email) VALUES (?, ?)', [name, email]);
+    const user = await db.get('SELECT * FROM users WHERE id = ?', [result.lastID]);
+
+    res.json(user);
+});
+
+
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
+
+app.get('/users', async (req, res) => {
+    const db = await connect();
+    const users = await db.all('SELECT * FROM users');
+  
+    res.json(users);
+});
+
+app.put('/users/:id', async (req, res) => {
+  const db = await connect();
+  const { name, email } = req.body;
+  const { id } = req.params;
+
+  await db.run('UPDATE users SET name = ?, email = ? WHERE id = ?', [name, email, id]);
+  const user = await db.get('SELECT * FROM users WHERE id = ?', [id]);
+
+  res.json(user);
+});
+
+app.delete('/users/:id', async (req, res) => {
+  const db = await connect();
+  const { id } = req.params;
+
+  await db.run('DELETE FROM users WHERE id = ?', [id]);
+
+  res.json({ message: 'User deleted' });
+});
 ```
-## AGORA VAMOS RODAR O SERVIDOR
-Se vc fechou o terminal abra outra vez, e digite:
+# ESTA QUASE ACABANDOkkkk
+1. Crie um arquivo chamado "database.ts" dentro da pasta "src" 👇
+2. E cole esse lindo código dentro dele
+```typescript
+import { open } from 'sqlite';
+import sqlite3 from 'sqlite3';
+
+let instance: any | null = null;
+
+export async function connect() {
+  if (instance) return instance;
+
+  const db = await open({
+     filename: './src/database.sqlite',
+     driver: sqlite3.Database
+   });
+  
+  await db.exec(`
+    CREATE TABLE IF NOT EXISTS users (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      name TEXT,
+      email TEXT
+    )
+  `);
+
+  instance = db;
+  return db;
+}
+```
+3. Crie um arquivo dentro da pasta src chamado "test.http"
+4. E por final, instale uma extensão no seu VSCODE chamada "REST Client" 👇
+---
+# Agora vamos rodar e testar o nosso servidor
+1. Naquele terminal bem antigo nosso. Cole e rode esse comando:
 ```sh
 npm run dev
+```
+2. Abra o Chrome ou Firefox, e cole na barra de pesquisa esse link:
+```sh
+http://localhost:3333/
+```
+3. É provavel que vc veja uma tela branca e bem no cantinho superior esquerdo duas palavras: "Hello Word", isso significa que está rodando corretamente o servidor.
+4. Agora vamos testar algumas funções do nosso servidor, que são as de : adicionar um úsuario, atualizar as informações dele e apagalo da face da terra.
+5. lembra do arquivo "test.http"? Pois então, ele vai ser o nosso carteiro. Ele que vai mandar as mensagens para o nosso servidor.
+6. Abra ele e cole esse código:
+```http
+POST http://localhost:3333/users HTTP/1.1
+content-type: application/json
+
+{
+  "name": "John Doe",
+  "email": "johndoe@mail.com"
+}
+
+####
+
+PUT http://localhost:3333/users/1 HTTP/1.1
+content-type: application/json
+
+{
+  "name": "John Doe Updated",
+  "email": "johndoe@mail.com"
+}
+
+####
+
+DELETE http://localhost:3333/users/1 HTTP/1.1
+```
+7. Se vc prestar atenção, em cima do POST, PUT e DELETE, temos duas palavrinhas "Send Request". Elas não estão ali por acaso. Elas só aparecem se vc tiver instalado aquela extensão que eu falei.
+
+## Vamos testar em partes agora
+- Primeiro clique no "Send Request" que está acima do POST.
+- Após ter feito isso, vc disse pro servidor: "mano, existe uma cara chamado "John Doe" e o email dele é "johndoe@mail.com"
+- Verifique se foi enviado ou não essa mensagem, acessando esse link:
+```http
+http://localhost:3333/users
+```
+- Agora clique no "Send Request" que está acima do "PUT"
+- Após ter feito isso, vc disse pro servidor: "mano, lembra daquele cara "Jonh Doe"? É.... eu me confundi, ele n se chama assim, o nome dele real é John Doe Updated, bizzano né 😳"
+- Verifique se mudou o nome dele:
+```http
+http://localhost:3333/users
+```
+- Por fim, clique no ultimo "Send Request", que está acima do DELETE
+- Apóst ter feito isso, vc disse pro servidor: "mano, o Jonh, ele foi de vasco, bateu as botas, foi de americanas. DELETE-O do banco de dados.
+- Verifique se existe se ele já n existe mais:
+```http
+http://localhost:3333/users
 ```
