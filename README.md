@@ -23,13 +23,13 @@ Ele é uma extensão **tipada** do JavaScript que compila para JavaScript puro. 
 ## 3° Oq é "servidor"
 Um servidor é um COMPUTADOR que vai ofertar um serviço ou aplicação.
 > Como exemplo, o youtube, ele oferece o serviço de streaming e pra isso acontecer ele armazena os vídeos em ***MÁQUINAS SUPER-MEGA-FUDAS***👇
-![Exemplo de servidor](./imgs/servidor.jpg "Servidor")
+![Exemplo de servidor](./imgs/servidor.jpg)
 
 # ALGUNS PRÉ-REQUISITOS
 1. Para executarmos o Node e programarmos em TypeScript vc prescisa ter ele no computador
 
     - No instituto, o Node já pode estar instalado. Para verificar, busque "cmd" no Windows. E procure por essa janela 👇 
-    ![Terminal](./imgs/cmd.jpg "CMD")
+    ![Terminal](./imgs/terminal.jpg "CMD")
 
     - Agora copie e cole esse código👇 na janela preta e aperte ENTER:
     ```
