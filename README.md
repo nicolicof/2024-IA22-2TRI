@@ -29,7 +29,7 @@ Um servidor é um COMPUTADOR que vai ofertar um serviço ou aplicação.
 1. Para executarmos o Node e programarmos em TypeScript vc prescisa ter ele no computador
 
     - No instituto, o Node já pode estar instalado. Para verificar, busque "cmd" no Windows. E procure por essa janela 👇 
-    ![Terminal](./imgs/terminal.jpg "CMD")
+    ![Terminal](./imgs/terminal.png "CMD")
 
     - Agora copie e cole esse código👇 na janela preta e aperte ENTER:
     ```
