@@ -23,8 +23,7 @@ Ele é uma extensão **tipada** do JavaScript que compila para JavaScript puro. 
 ## 3° Oq é "servidor"
 Um servidor é um COMPUTADOR que vai ofertar um serviço ou aplicação.
 > Como exemplo, o youtube, ele oferece o serviço de streaming e pra isso acontecer ele armazena os vídeos em ***MÁQUINAS SUPER-MEGA-FUDAS***👇
-
-![Exemplo de servidor](./imgs/server.jpg "Servidor")
+![Exemplo de servidor](./imgs/servidor.jpg "Servidor")
 
 # ALGUNS PRÉ-REQUISITOS
 1. Para executarmos o Node e programarmos em TypeScript vc prescisa ter ele no computador
@@ -37,7 +36,7 @@ Um servidor é um COMPUTADOR que vai ofertar um serviço ou aplicação.
    node -v
    ```
    - Se estiver instalado deve aparecer algo como:
-        ![node_version](./imgs/nodevv.png "resultado do node --version")
+   ![node_version](./imgs/nodevv.png "resultado do node --version")
 
 > Se vc estiver em um sistema ***LINUX***, busque pelo programa "terminal" e siga o mesmo passo-a-passo anterior
 # CHEGOU A HORA DE PROGRAMAR 😈
@@ -111,7 +110,7 @@ Se tudo tiver ocorrido bem, vc vai ver algo assim:
 "dev": "npx nodemon src/app.ts",
 ```
 Deve ficar assim👇
-![package.json](./imgs/package.png"package")
+![package.json](./imgs/package.png)
 
 5. Abra o "app.ts" que esta dentro da pasta "src" e cole o código abaixo👇 [VAI APARECER UM ERRO, MAS IGNORE POIS ELE VAI SER RESOLVIDO NO PRÓXIMO PASSO]:
 ```typescript
@@ -119,7 +118,7 @@ import express from 'express';
 import cors from 'cors';
 import { connect } from './database';
 
-const port = 3333;
+const port = 1111;
 const app = express();
 
 app.use(cors());
@@ -173,7 +172,9 @@ app.delete('/users/:id', async (req, res) => {
 ```
 # ESTA QUASE ACABANDOkkkk
 1. Crie um arquivo chamado "database.ts" dentro da pasta "src" 👇
-2. E cole esse lindo código dentro dele
+![database-ts](./imgs/database-ts.png)
+
+3. E cole esse lindo código dentro dele
 ```typescript
 import { open } from 'sqlite';
 import sqlite3 from 'sqlite3';
@@ -202,6 +203,7 @@ export async function connect() {
 ```
 3. Crie um arquivo dentro da pasta src chamado "test.http"
 4. E por final, instale uma extensão no seu VSCODE chamada "REST Client" 👇
+![extension](./imgs/extension.png)
 ---
 # Agora vamos rodar e testar o nosso servidor
 1. Naquele terminal bem antigo nosso. Cole e rode esse comando:
@@ -210,14 +212,14 @@ npm run dev
 ```
 2. Abra o Chrome ou Firefox, e cole na barra de pesquisa esse link:
 ```sh
-http://localhost:3333/
+http://localhost:1111/
 ```
 3. É provavel que vc veja uma tela branca e bem no cantinho superior esquerdo duas palavras: "Hello Word", isso significa que está rodando corretamente o servidor.
 4. Agora vamos testar algumas funções do nosso servidor, que são as de : adicionar um úsuario, atualizar as informações dele e apagalo da face da terra.
 5. lembra do arquivo "test.http"? Pois então, ele vai ser o nosso carteiro. Ele que vai mandar as mensagens para o nosso servidor.
 6. Abra ele e cole esse código:
 ```http
-POST http://localhost:3333/users HTTP/1.1
+POST http://localhost:1111/users HTTP/1.1
 content-type: application/json
 
 {
@@ -227,7 +229,7 @@ content-type: application/json
 
 ####
 
-PUT http://localhost:3333/users/1 HTTP/1.1
+PUT http://localhost:1111/users/1 HTTP/1.1
 content-type: application/json
 
 {
@@ -237,7 +239,7 @@ content-type: application/json
 
 ####
 
-DELETE http://localhost:3333/users/1 HTTP/1.1
+DELETE http://localhost:1111/users/1 HTTP/1.1
 ```
 7. Se vc prestar atenção, em cima do POST, PUT e DELETE, temos duas palavrinhas "Send Request". Elas não estão ali por acaso. Elas só aparecem se vc tiver instalado aquela extensão que eu falei.
 
@@ -246,13 +248,13 @@ DELETE http://localhost:3333/users/1 HTTP/1.1
 - Após ter feito isso, vc disse pro servidor: "mano, existe uma cara chamado "John Doe" e o email dele é "johndoe@mail.com"
 - Verifique se foi enviado ou não essa mensagem, acessando esse link:
 ```http
-http://localhost:3333/users
+http://localhost:1111/users
 ```
 - Agora clique no "Send Request" que está acima do "PUT"
 - Após ter feito isso, vc disse pro servidor: "mano, lembra daquele cara "Jonh Doe"? É.... eu me confundi, ele n se chama assim, o nome dele real é John Doe Updated, bizzano né 😳"
 - Verifique se mudou o nome dele [atualize á pagina]:
 ```http
-http://localhost:3333/users
+http://localhost:1111/users
 ```
 - Por fim, clique no ultimo "Send Request", que está acima do DELETE
 - Após ter feito isso, vc disse pro servidor: "mano, o Jonh, ele foi de vasco, bateu as botas, foi de americanas. DELETE-O do banco de dados.
