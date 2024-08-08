@@ -46,12 +46,16 @@ Um servidor nada mais é que uma máquina que vai ofertar para algumas ou vária
 ![teclas](./imgs/teclado.jpg "abrir o terminal")
 5. Sera aberta uma caixa muito semelhante ao terminal que já vimos anteriormente:
 ![terminal](./imgs/caixa_preta.png "terminal aberto no vscode")
+6. Acesse a pasta para inicar o projeto com:
+```sh
+npm init -y
+```
 
 # AGORA VAMOS DIGITAR COISAS NO TERMINAL 
 
 ***PRIMEIRAMENTE*** vamos iniciar o projeto e criar o arquivo de configuração. Fazemos isso tudo com apenas um comando:
 ```typescript
-npm init -y
+cd 
 ```
 ---
 ***SEGUNDAMENTE*** vamos instalar alguns pacotes para rodarmos a nossa aplicação dentro de um servidor, sendo elas:
