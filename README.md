@@ -39,7 +39,7 @@ Um servidor é um COMPUTADOR que vai ofertar um serviço ou aplicação.
    ![node_version](./imgs/nodev.png)
 
 > Se vc estiver em um sistema ***LINUX***, busque pelo programa "terminal" e siga o mesmo passo-a-passo anterior
-# CHEGOU A HORA DE PROGRAMAR 😈
+
 1. Ainda no terminal anterior, crie uma pasta chamada "projeto" e entre nela com o comando abaixo👇:
 ```
 mkdir projeto && cd projeto
@@ -123,6 +123,7 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
+app.use(express.static(__dirname + '/../public'))
 
 app.get('/', (req, res) => {
   res.send('Hello World');
@@ -247,18 +248,27 @@ DELETE http://localhost:1111/users/1 HTTP/1.1
 - Primeiro clique no "Send Request" que está acima do POST.
 - Após ter feito isso, vc disse pro servidor: "mano, existe uma cara chamado "John Doe" e o email dele é "johndoe@mail.com"
 - Verifique se foi enviado ou não essa mensagem, acessando esse link:
-```http
+```sh
 http://localhost:1111/users
 ```
 - Agora clique no "Send Request" que está acima do "PUT"
 - Após ter feito isso, vc disse pro servidor: "mano, lembra daquele cara "Jonh Doe"? É.... eu me confundi, ele n se chama assim, o nome dele real é John Doe Updated, bizzano né 😳"
 - Verifique se mudou o nome dele [atualize á pagina]:
-```http
+```sh
 http://localhost:1111/users
 ```
 - Por fim, clique no ultimo "Send Request", que está acima do DELETE
 - Após ter feito isso, vc disse pro servidor: "mano, o Jonh, ele foi de vasco, bateu as botas, foi de americanas. DELETE-O do banco de dados.
 - Verifique se existe se ele já n existe mais:
-```http
+```sh
 http://localhost:3333/users
 ```
+
+# Agora vamos adicionar o Front-End(Visual)
+
+1. Crie uma pasta chamada de public, pelo vscode ou com o comando abaixo:
+```sh
+mkdir public
+```
+2. E crie um arquivo html chamado "index.html" dentro da pasta public. Deve ficar assim 👇
+![public](./imgs/public.png)
