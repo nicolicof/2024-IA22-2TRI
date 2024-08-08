@@ -77,7 +77,7 @@ npx tsc --init
 ```
 6. Crie uma pasta chamada "src"👇
 ```typescript
-mdkir src
+mkdir src
 ```
 7. Vamos abrir o VSCODE . **[n esqueça do pontinho]**👇
 ```typescript
@@ -113,7 +113,7 @@ Se tudo tiver ocorrido bem, vc vai ver algo assim:
 Deve ficar assim👇
 ![package.json](./imgs/package.png"package")
 
-5. Abra o "app.ts" que esta dentro da pasta "src" e cole esse código:
+5. Abra o "app.ts" que esta dentro da pasta "src" e cole o código abaixo👇 [VAI APARECER UM ERRO, MAS IGNORE POIS ELE VAI SER RESOLVIDO NO PRÓXIMO PASSO]:
 ```typescript
 import express from 'express';
 import cors from 'cors';
@@ -250,12 +250,12 @@ http://localhost:3333/users
 ```
 - Agora clique no "Send Request" que está acima do "PUT"
 - Após ter feito isso, vc disse pro servidor: "mano, lembra daquele cara "Jonh Doe"? É.... eu me confundi, ele n se chama assim, o nome dele real é John Doe Updated, bizzano né 😳"
-- Verifique se mudou o nome dele:
+- Verifique se mudou o nome dele [atualize á pagina]:
 ```http
 http://localhost:3333/users
 ```
 - Por fim, clique no ultimo "Send Request", que está acima do DELETE
-- Apóst ter feito isso, vc disse pro servidor: "mano, o Jonh, ele foi de vasco, bateu as botas, foi de americanas. DELETE-O do banco de dados.
+- Após ter feito isso, vc disse pro servidor: "mano, o Jonh, ele foi de vasco, bateu as botas, foi de americanas. DELETE-O do banco de dados.
 - Verifique se existe se ele já n existe mais:
 ```http
 http://localhost:3333/users
