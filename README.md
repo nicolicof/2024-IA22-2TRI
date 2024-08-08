@@ -2,7 +2,7 @@
 # 2024-IA22-2TRI
 **(LEIA TUDINHO)**
 Bom dia novato(a), vamos rodar uma aplicação hoje. Para agilizar, 
-NÃO FECHE nenhuma janela/tarefa/aplicativo/terminal que eu lhe pedir para abrir. **ARIGATO**🙏
+NÃO FECHE nenhuma janela/tarefa/aplicativo/terminal que eu lhe pedir para abrir, e dentro do VSCODE sempre salve as coisas com CTRL+S. **ARIGATO**🙏
 
 ### Vamos aprender:
 - typescript
