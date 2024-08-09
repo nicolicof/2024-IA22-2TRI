@@ -248,9 +248,9 @@ http://localhost:3333/users
 
 ## Agora vamos adicionar o FrontEnd
 1. Crie uma pasta chamada: `public` pelo vscode ou com o comando abaixo:
-   ```sh
-   mkdir public
-   ```
+```sh
+mkdir public
+```
 3. E crie um arquivo html chamado "index.html" dentro da pasta public. Deve ficar assim 👇
 ![public](./imgs/public.png).
 4. E cole esse código 👇
@@ -336,4 +336,4 @@ http://localhost:3333/users
 </body>
 </html>
 ```
-5. Acesse novamente o esse link: `http://localhost:1111/users`. E teste os botões, adicione pessoas e removas elas. 😊
+5. **E FINALMENTE** Acesse esse link: `http://localhost:1111/users`. E teste os botões, adicione pessoas e removas elas. 😊
