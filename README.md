@@ -336,4 +336,4 @@ mkdir public
 </body>
 </html>
 ```
-5. **E FINALMENTE** Acesse esse link: `http://localhost:1111/users`. E teste os botões, adicione pessoas e removas elas. 😊
+5. **E FINALMENTE** Acesse esse link: `http://localhost:1111`. E teste os botões, adicione pessoas e removas elas. 😊
