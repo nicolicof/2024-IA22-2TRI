@@ -1,96 +1,74 @@
-
 # 2024-IA22-2TRI
-**(LEIA TUDINHO)**
-Bom dia novato(a), vamos rodar uma aplicação hoje. Para agilizar, 
-NÃO FECHE nenhuma janela/tarefa/aplicativo/terminal que eu lhe pedir para abrir, e dentro do VSCODE sempre salve as coisas com CTRL+S. **ARIGATO**🙏
+Bom dia novato(a), vamos fazer um projetinho.
 
-### Vamos aprender:
-- typescript
-- node.js
-- rodar um servidor
-- criar uma aplicação
-- e como rodar a aplicação no servidor
-
-## 1° Oq é TypeScript
-Ele é uma extensão **tipada** do JavaScript que compila para JavaScript puro. Da suporte a classes, módulos e interfaces.
-
-## 2° Oq é Node, npm e Node.js
-1. Node é uma plataforma que constroi aplicações de servidor
-2. Node.js é o ambiente de execução 
-3. npm é o gerenciador de pacotes para módulos do Node.js
-> O Node.js é como seu celular Android, e o npm é a Play Store, onde você baixa e instala apps
-
-## 3° Oq é "servidor"
-Um servidor é um COMPUTADOR que vai ofertar um serviço ou aplicação.
-> Como exemplo, o youtube, ele oferece o serviço de streaming e pra isso acontecer ele armazena os vídeos em ***MÁQUINAS SUPER-MEGA-FUDAS***👇
-![Exemplo de servidor](./imgs/servidor.jpg)
+Se você quer agilizar e terminar rápido:
+- **NÃO FECHE NENHUMA JANELA** que você abrir.
+- No VSCODE sempre que editar algo, salve a edição com CTRL+S
 
 # ALGUNS PRÉ-REQUISITOS
-1. Para executarmos o Node e programarmos em TypeScript vc prescisa ter ele no computador
-
-    - No instituto, o Node já pode estar instalado. Para verificar, busque "cmd" no Windows. E procure por essa janela 👇 
+1. Antes de começar o projeto verifique se o programa Node está instalado.
+    1. Busque pelo programa "cmd" no Windows. Vai ser aberta essa janela👇 
     ![Terminal](./imgs/terminal.png)
-
-    - Agora copie e cole esse código👇 na janela preta e aperte ENTER:
+    2. **NUNCA FECHE ESSA JANELA, TIPO NUNCA** (se n, n vai funcionar)
+    3. Agora copie e cole esse código abaixo👇 e aperte ENTER:
+    ```sh
+    node -v
     ```
-   node -v
-   ```
-   - Se estiver instalado deve aparecer algo como:
-   ![node_version](./imgs/nodev.png)
+    4. Deve aparecer a versão do node, talvez n seja igual como esta na imagem, mas n importa:
+    ![node_version](./imgs/nodev.png)
 
 > Se vc estiver em um sistema ***LINUX***, busque pelo programa "terminal" e siga o mesmo passo-a-passo anterior
 
-1. Ainda no terminal anterior, crie uma pasta chamada "projeto" e entre nela com o comando abaixo👇:
-```
+2. Ainda no terminal anterior, com o comando abaixo👇, vamos criar uma pasta e entrar nela:
+```sh
 mkdir projeto && cd projeto
 ```
-
-2. Agora vamos iniciar o projeto e criar o arquivo de configuração. Fazemos isso com um comando:
+3. Agora vamos iniciar o projeto e criar o arquivo de configuração
 ```
 npm init -y
 ```
-3.  Vamos instalar alguns pacotes para rodarmos a nossa aplicação dentro de um servidor:
-	- express [O servidor]
-	- cors [politica que permite o compartilhamento de dados entre sites]
-	- sqlite3 [driver que permite a conexão entre o Node e um banco de dados SQLite]
-	- sqlite [um "facilitador", pra vc n escrever um código muito paia]
+4. Abaixo temos alguns pacotes que prescimos para rodar o projeto
+  - express [O servidor]
+  - cors [politica que permite o compartilhamento de dados entre sites]
+  - sqlite3 [driver que permite a conexão entre o Node e um banco de dados SQLite]
+  - sqlite [um "facilitador", pra vc n escrever um código muito paia]
 
-Para instalar, rode o comando abaixo
-```typescript
+Para instalar os pacotes acima, rode o comando abaixo:
+```sh
 npm install express cors sqlite3 sqlite
 ```
-4. Vamos instalar mais pacotes, agora no MODO DESENVOLVEDOR (eles facilitam a nossa vida de programadores). Esses pacotes são:
-- typescript [a linguagem]
-- nodemon [um F5 automático para ajudar no desenvolvimento]
-- ts-node [permite executar o typescript pelo node]
-- @types/express [informações para o typescript entender como usar o express]
-- @types/cors [informações para o typescript entender como usar o cors]
+5. Vamos instalar mais pacotes, agora no MODO DESENVOLVEDOR (eles facilitam a nossa vida de programadores). Esses pacotes são:
+   - typescript [a linguagem que vamos usar]
+   - nodemon [um F5 automático para ajudar no desenvolvimento]
+   - ts-node [permite executar o typescript pelo node]
+   - @types/express [informações para o typescript entender como usar o express]
+   - @types/cors [informações para o typescript entender como usar o cors]
 
-instale com esse comando:
+Instale os pacotes👇
 ```typescript
 npm install --save-dev typescript nodemon ts-node @types/express @types/cors
 ```
-5.  AGORA vamos criar um arquivo de configuração para o typescript, com o comando abaixo 👇
+6.  Crie o arquivo de configuração para o typescript
 ```typescript
 npx tsc --init
 ```
-6. Crie uma pasta chamada "src"👇
+6. Crie uma pasta chamada `src`
 ```typescript
 mkdir src
 ```
-7. Vamos abrir o VSCODE . **[n esqueça do pontinho]**👇
+7. O comando abaixo vai abrir o vscode, vai demorar um pouco pra abrir. Espere.
 ```typescript
 code .
 ```
-# AGORA VAMOS PROGRAMAR
-Se tudo tiver ocorrido bem, vc vai ver algo assim:
+# HORA DE COMEÇARMOS O PROJETO
+Se tudo tiver ocorrido bem, vc vai ver o vscode exatamente assim:
 ![vscode](./imgs/code.png)
 
-1. Crie um arquivo dentro da pasta "src", e nomeie ele exatamente com esse nome: **app.ts**
+1. Crie um arquivo dentro da pasta "src" e nomeie ele exatamente com esse nome: `app.ts`
 ![app.ts](./imgs/appts.png)
 
-2. Abra o arquivo tsconfig.json e APAGUE TODO O CÓDIGO
-3. Copie esse código abaixo e cole dentro arquivo(tsconfig.json)
+2. Abra o arquivo tsconfig.json(de dois clique nele) e APAGUE TODO O CÓDIGO. (CTRL+A e DELETE)
+3. Copie esse código abaixo e cole dentro arquivo `tsconfig.json`
 ```json
 {
   "compilerOptions": {
@@ -105,14 +83,14 @@ Se tudo tiver ocorrido bem, vc vai ver algo assim:
   }
 }
 ```
-4. Abra o "package.json" e procure por um tal de "scripts" e adicione esse código dentro dele:
+4. Abra o arquivo `package.json` e procure por um tal de "scripts" e adicione esse código
 ```json
 "dev": "npx nodemon src/app.ts",
 ```
-Deve ficar assim👇
+Deve ficar assim👇 OBS: Salve as mudanças com CTRL+S
 ![package.json](./imgs/package.png)
 
-5. Abra o "app.ts" que esta dentro da pasta "src" e cole o código abaixo👇 [VAI APARECER UM ERRO, MAS IGNORE POIS ELE VAI SER RESOLVIDO NO PRÓXIMO PASSO]:
+5. Abra o `app.ts` que vc criou dentro da pasta "src" e cole o código abaixo👇 [UM ERRO VAI APARECER, MAS IGNORE, PQ ELE VAI SER CORRIGIDO DEPOIS]:
 ```typescript
 import express from 'express';
 import cors from 'cors';
@@ -171,11 +149,11 @@ app.delete('/users/:id', async (req, res) => {
   res.json({ message: 'User deleted' });
 });
 ```
-# ESTA QUASE ACABANDOkkkk
+# ESTÁ PERTO DO FIM...
 1. Crie um arquivo chamado "database.ts" dentro da pasta "src" 👇
 ![database-ts](./imgs/database-ts.png)
 
-3. E cole esse lindo código dentro dele
+3. E cole esse código:
 ```typescript
 import { open } from 'sqlite';
 import sqlite3 from 'sqlite3';
@@ -202,23 +180,26 @@ export async function connect() {
   return db;
 }
 ```
-3. Crie um arquivo dentro da pasta src chamado "test.http"
-4. E por final, instale uma extensão no seu VSCODE chamada "REST Client" 👇
+3. Crie um arquivo dentro da pasta "src" chamado `test.http`
+4. Por final, instale uma extensão no seu VSCODE chamada "REST Client". 👇
 ![extension](./imgs/extension.png)
 ---
 # Agora vamos rodar e testar o nosso servidor
-1. Naquele terminal bem antigo nosso. Cole e rode esse comando:
+1. Naquele terminal que vc n fechou. Cole e rode esse comando:
 ```sh
 npm run dev
 ```
-2. Abra o Chrome ou Firefox, e cole na barra de pesquisa esse link:
+> Se vc fechou, ainda há esperanças. Clique nessas teclas: CTRL+'  [esse **'** é uma tecla q está abaixo do ESC ] E rode o comando anterior na caixa preta que abrir.
+2. Agora abra o Chrome ou Firefox e cole na barra de pesquisa esse link:
 ```sh
 http://localhost:1111/
 ```
-3. É provavel que vc veja uma tela branca e bem no cantinho superior esquerdo duas palavras: "Hello Word", isso significa que está rodando corretamente o servidor.
-4. Agora vamos testar algumas funções do nosso servidor, que são as de : adicionar um úsuario, atualizar as informações dele e apagalo da face da terra.
-5. lembra do arquivo "test.http"? Pois então, ele vai ser o nosso carteiro. Ele que vai mandar as mensagens para o nosso servidor.
-6. Abra ele e cole esse código:
+3. Vc vai ver uma tela branca e bem no cantinho superior duas palavras: "Hello Word"
+4. Agora vamos testar algumas funções do nosso servidor, que são as de:
+   - adicionar um úsuario
+   - atualizar as informações dele
+   - e apagalo
+6. Abra o test.http (está dentro da pasta src) e cole esse código
 ```http
 POST http://localhost:1111/users HTTP/1.1
 content-type: application/json
@@ -242,33 +223,116 @@ content-type: application/json
 
 DELETE http://localhost:1111/users/1 HTTP/1.1
 ```
-7. Se vc prestar atenção, em cima do POST, PUT e DELETE, temos duas palavrinhas "Send Request". Elas não estão ali por acaso. Elas só aparecem se vc tiver instalado aquela extensão que eu falei.
+7. Se vc prestar atenção, em cima do POST, PUT e DELETE, temos duas palavrinhas "Send Request". Elas não estão ali por acaso. Elas só aparecem se vc tiver instalado aquela extensão que eu falei(REST Client)
 
-## Vamos testar em partes agora
-- Primeiro clique no "Send Request" que está acima do POST.
-- Após ter feito isso, vc disse pro servidor: "mano, existe uma cara chamado "John Doe" e o email dele é "johndoe@mail.com"
-- Verifique se foi enviado ou não essa mensagem, acessando esse link:
+## Vamos testar agora
+1. Clique no "Send Request" que está acima do `POST`
+2. Vc acabou de dizer pro servidor: "mano, existe uma cara chamado "John Doe" e o email dele é "johndoe@mail.com"
+3. Verifique se foi enviado ou não essa mensagem, acessando esse link:
 ```sh
 http://localhost:1111/users
 ```
-- Agora clique no "Send Request" que está acima do "PUT"
-- Após ter feito isso, vc disse pro servidor: "mano, lembra daquele cara "Jonh Doe"? É.... eu me confundi, ele n se chama assim, o nome dele real é John Doe Updated, bizzano né 😳"
+4. Clique no "Send Request" que está acima do `PUT`
+- Vc acabou de dizer pro servidor: "mano, lembra daquele cara "Jonh Doe"? É.... eu me confundi, ele n se chama assim, o nome dele real é John Doe Updated, bizzano né😳"
 - Verifique se mudou o nome dele [atualize á pagina]:
 ```sh
 http://localhost:1111/users
 ```
-- Por fim, clique no ultimo "Send Request", que está acima do DELETE
-- Após ter feito isso, vc disse pro servidor: "mano, o Jonh, ele foi de vasco, bateu as botas, foi de americanas. DELETE-O do banco de dados.
-- Verifique se existe se ele já n existe mais:
+- Por fim, clique no ultimo "Send Request", que está acima do `DELETE`
+- Após ter feito isso, vc disse pro servidor: "mano, o Jonh, ele foi de vasco, bateu as botas, foi de americanas. DELETE ele do banco de dados.
+- Verifique se ele já n existe mais [atualize á pagina]:
 ```sh
 http://localhost:3333/users
 ```
 
-# Agora vamos adicionar o Front-End(Visual)
+## Agora vamos adicionar o FrontEnd
+1. Crie uma pasta chamada: `public` pelo vscode ou com o comando abaixo:
+   ```sh
+   mkdir public
+   ```
+3. E crie um arquivo html chamado "index.html" dentro da pasta public. Deve ficar assim 👇
+![public](./imgs/public.png).
+4. E cole esse código 👇
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
 
-1. Crie uma pasta chamada de public, pelo vscode ou com o comando abaixo:
-```sh
-mkdir public
+<body>
+  <form>
+    <input type="text" name="name" placeholder="Nome">
+    <input type="email" name="email" placeholder="Email">
+    <button type="submit">Cadastrar</button>
+  </form>
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!--  -->
+    </tbody>
+  </table>
+  <script>
+    const form = document.querySelector('form')
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault()
+      const name = form.name.value
+      const email = form.email.value
+      await fetch('/users', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email })
+      })
+      form.reset()
+      fetchData()
+    })
+    const tbody = document.querySelector('tbody')
+    async function fetchData() {
+      const resp = await fetch('/users')
+      const data = await resp.json()
+      tbody.innerHTML = ''
+      data.forEach(user => {
+        const tr = document.createElement('tr')
+        tr.innerHTML = `
+          <td>${user.id}</td>
+          <td>${user.name}</td>
+          <td>${user.email}</td>
+          <td>
+            <button class="excluir">excluir</button>
+            <button class="editar">editar</button>
+          </td>
+        `
+        const btExcluir = tr.querySelector('button.excluir')
+        const btEditar = tr.querySelector('button.editar')
+        btExcluir.addEventListener('click', async () => {
+          await fetch(`/users/${user.id}`, { method: 'DELETE' })
+          tr.remove()
+        })
+        btEditar.addEventListener('click', async () => {
+          const name = prompt('Novo nome:', user.name)
+          const email = prompt('Novo email:', user.email)
+          await fetch(`/users/${user.id}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name, email })
+          })
+          fetchData()
+        })
+        tbody.appendChild(tr)
+      })
+    }
+    fetchData()
+  </script>
+</body>
+</html>
 ```
-2. E crie um arquivo html chamado "index.html" dentro da pasta public. Deve ficar assim 👇
-![public](./imgs/public.png)
+5. Acesse novamente o esse link: `http://localhost:1111/users`. E teste os botões, adicione pessoas e removas elas. 😊
