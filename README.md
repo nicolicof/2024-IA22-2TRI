@@ -90,7 +90,38 @@ Se tudo tiver ocorrido bem, vc vai ver o vscode exatamente assim:
 Deve ficar assim👇 OBS: Salve as mudanças com CTRL+S
 ![package.json](./imgs/package.png)
 
-5. Abra o `app.ts` que vc criou dentro da pasta "src" e cole o código abaixo👇 [UM ERRO VAI APARECER, MAS IGNORE, PQ ELE VAI SER CORRIGIDO DEPOIS]:
+5. Crie um arquivo chamado "database.ts" dentro da pasta "src" 👇
+![database-ts](./imgs/database-ts.png)
+
+6. E cole esse código:
+```typescript
+import { open } from 'sqlite';
+import sqlite3 from 'sqlite3';
+
+let instance: any | null = null;
+
+export async function connect() {
+  if (instance) return instance;
+
+  const db = await open({
+     filename: './src/database.sqlite',
+     driver: sqlite3.Database
+   });
+  
+  await db.exec(`
+    CREATE TABLE IF NOT EXISTS users (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      name TEXT,
+      email TEXT
+    )
+  `);
+
+  instance = db;
+  return db;
+}
+```
+
+7. Abra o `app.ts` que vc criou dentro da pasta "src" e cole o código abaixo👇
 ```typescript
 import express from 'express';
 import cors from 'cors';
@@ -150,38 +181,8 @@ app.delete('/users/:id', async (req, res) => {
 });
 ```
 # ESTÁ PERTO DO FIM...
-1. Crie um arquivo chamado "database.ts" dentro da pasta "src" 👇
-![database-ts](./imgs/database-ts.png)
-
-3. E cole esse código:
-```typescript
-import { open } from 'sqlite';
-import sqlite3 from 'sqlite3';
-
-let instance: any | null = null;
-
-export async function connect() {
-  if (instance) return instance;
-
-  const db = await open({
-     filename: './src/database.sqlite',
-     driver: sqlite3.Database
-   });
-  
-  await db.exec(`
-    CREATE TABLE IF NOT EXISTS users (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      name TEXT,
-      email TEXT
-    )
-  `);
-
-  instance = db;
-  return db;
-}
-```
-3. Crie um arquivo dentro da pasta "src" chamado `test.http`
-4. Por final, instale uma extensão no seu VSCODE chamada "REST Client". 👇
+1. Crie um arquivo dentro da pasta "src" chamado `test.http`
+2. E instale uma extensão no seu VSCODE chamada "REST Client". Tutorial fodão abaixo👇
 ![extension](./imgs/extension.png)
 ---
 # Agora vamos rodar e testar o nosso servidor
