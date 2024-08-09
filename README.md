@@ -265,8 +265,8 @@ mkdir public
 
 <body>
   <form>
-    <input type="text" name="name" placeholder="Nome">
-    <input type="email" name="email" placeholder="Email">
+    <input type="text" required name="name" placeholder="Nome">
+    <input type="email" required name="email" placeholder="Email">
     <button type="submit">Cadastrar</button>
   </form>
   <table>
