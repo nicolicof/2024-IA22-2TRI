@@ -217,7 +217,7 @@ DELETE http://localhost:1111/users/1 HTTP/1.1
 6. Verifique se mudou o nome dele [atualize á pagina] ou abra outra guia e cole esse link: (http://localhost:1111/users)
 7. Clique no ultimo "Send Request", que está acima do `DELETE`
 8. Após ter feito isso, vc disse pro servidor: "mano, o Jonh, ele MORREU, DELETE ele do banco de dados.
-9. Verifique se ele já n existe mais [atualize á pagina] ou abra outra guia e cole esse link: (http://localhost:3333/users)
+9. Verifique se ele já n existe mais [atualize á pagina] ou abra outra guia e cole esse link: (http://localhost:1111/users)
 
 ## Agora vamos adicionar algo visual
 1. Crie uma pasta chamada: `public` pelo vscode ou com o comando abaixo 👇 [tem q ser dentro da pasta "projeto"]:
