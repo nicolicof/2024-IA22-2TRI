@@ -1,15 +1,15 @@
 # 2024-IA22-2TRI
-Bom dia novato(a), vamos fazer um projetinho.
+Bom dia, vamos fazer um projeto.
 
-Se você quer agilizar e terminar rápido:
+Se você quizer terminar mais rápido:
 - **NÃO FECHE NENHUMA JANELA** que você abrir.
-- No VSCODE sempre que editar algo, salve a edição com CTRL+S
+- **SEMPRE SALVE OS ARQUIVOS** com CTRL+s
 
 # ALGUNS PRÉ-REQUISITOS
 1. Antes de começar o projeto verifique se o programa Node está instalado.
-    1. Busque pelo programa "cmd" no Windows. Vai ser aberta essa janela👇 
+    1. Busque por "cmd" no Windows.[No linux "terminal"] Vai ser aberta essa janela👇 
     ![Terminal](./imgs/terminal.png)
-    2. **NUNCA FECHE ESSA JANELA, TIPO NUNCA** (se n, n vai funcionar)
+    2. **NUNCA FECHE ESSA JANELA PELO AMOR DE DEUS**
     3. Agora copie e cole esse código abaixo👇 e aperte ENTER:
     ```sh
     node -v
@@ -17,38 +17,23 @@ Se você quer agilizar e terminar rápido:
     4. Deve aparecer a versão do node, talvez n seja igual como esta na imagem, mas n importa:
     ![node_version](./imgs/nodev.png)
 
-> Se vc estiver em um sistema ***LINUX***, busque pelo programa "terminal" e siga o mesmo passo-a-passo anterior
-
-2. Ainda no terminal anterior, com o comando abaixo👇, vamos criar uma pasta e entrar nela:
+2. Ainda no cmd, com o comando abaixo👇, vamos criar uma pasta e entrar nela:
 ```sh
 mkdir projeto && cd projeto
 ```
-3. Agora vamos iniciar o projeto e criar o arquivo de configuração
+3. Inicie o projeto👇
 ```
 npm init -y
 ```
-4. Abaixo temos alguns pacotes que prescimos para rodar o projeto
-  - express [O servidor]
-  - cors [politica que permite o compartilhamento de dados entre sites]
-  - sqlite3 [driver que permite a conexão entre o Node e um banco de dados SQLite]
-  - sqlite [um "facilitador", pra vc n escrever um código muito paia]
-
-Para instalar os pacotes acima, rode o comando abaixo:
+4. Intale alguns pacotes, rode o comando abaixo(Pode demorar uns segundos):
 ```sh
 npm install express cors sqlite3 sqlite
 ```
-5. Vamos instalar mais pacotes, agora no MODO DESENVOLVEDOR (eles facilitam a nossa vida de programadores). Esses pacotes são:
-   - typescript [a linguagem que vamos usar]
-   - nodemon [um F5 automático para ajudar no desenvolvimento]
-   - ts-node [permite executar o typescript pelo node]
-   - @types/express [informações para o typescript entender como usar o express]
-   - @types/cors [informações para o typescript entender como usar o cors]
-
-Instale os pacotes👇
+5. Instale mais pacotes👇
 ```typescript
 npm install --save-dev typescript nodemon ts-node @types/express @types/cors
 ```
-6.  Crie o arquivo de configuração para o typescript
+6. Crie o arquivo de configuração para o typescript
 ```typescript
 npx tsc --init
 ```
@@ -56,19 +41,19 @@ npx tsc --init
 ```typescript
 mkdir src
 ```
-7. O comando abaixo vai abrir o vscode, vai demorar um pouco pra abrir. Espere.
+7. Agora rode o comando abaixo para o vscode abrir diretamente no seu projeto. **NÃO FECHE O CMD**
 ```typescript
 code .
 ```
 # HORA DE COMEÇARMOS O PROJETO
-Se tudo tiver ocorrido bem, vc vai ver o vscode exatamente assim:
+Se tudo tiver ocorrido bem, vc vai ver o vscode assim:
 ![vscode](./imgs/code.png)
 
-1. Crie um arquivo dentro da pasta "src" e nomeie ele exatamente com esse nome: `app.ts`
+1. Crie um arquivo dentro da pasta "src" e nomeie ele assim: `app.ts`
 ![app.ts](./imgs/appts.png)
 
-2. Abra o arquivo tsconfig.json(de dois clique nele) e APAGUE TODO O CÓDIGO. (CTRL+A e DELETE)
-3. Copie esse código abaixo e cole dentro arquivo `tsconfig.json`
+2. Abra o arquivo **tsconfig.json**. APAGUE TODO O CÓDIGO DENTRO DELE.
+3. Depois de apagar, copie o código abaixo e cole
 ```json
 {
   "compilerOptions": {
@@ -83,7 +68,7 @@ Se tudo tiver ocorrido bem, vc vai ver o vscode exatamente assim:
   }
 }
 ```
-4. Abra o arquivo `package.json` e procure por um tal de "scripts" e adicione esse código
+4. Abra o arquivo `package.json` e procure por "scripts" e adicione esse código abaixo(siga a imagem):
 ```json
 "dev": "npx nodemon src/app.ts",
 ```
@@ -182,25 +167,22 @@ app.delete('/users/:id', async (req, res) => {
 ```
 # ESTÁ PERTO DO FIM...
 1. Crie um arquivo dentro da pasta "src" chamado `test.http`
-2. E instale uma extensão no seu VSCODE chamada "REST Client". Tutorial fodão abaixo👇
+2. E instale uma extensão no seu vscode chamada "REST Client". Tutorial fodão abaixo👇
 ![extension](./imgs/extension.png)
 ---
 # Agora vamos rodar e testar o nosso servidor
-1. Naquele terminal que vc n fechou. Cole e rode esse comando:
+1. Naquele cmd que vc n fechou. Cole e rode esse comando:
 ```sh
 npm run dev
 ```
-> Se vc fechou, ainda há esperanças. Clique nessas teclas: CTRL+'  [esse **'** é uma tecla q está abaixo do ESC ] E rode o comando anterior na caixa preta que abrir.
-2. Agora abra o Chrome ou Firefox e cole na barra de pesquisa esse link:
-```sh
-http://localhost:1111/
-```
+> Se vc fechou, ainda há esperanças. Clique nessas teclas: **CTRL** + **'** . Ou pesquise como abrir o "terminal" dentro do vscode
+2. Clique nesse link: (http://localhost:1111/)
 3. Vc vai ver uma tela branca e bem no cantinho superior duas palavras: "Hello Word"
-4. Agora vamos testar algumas funções do nosso servidor, que são as de:
+4. Agora teste algumas funções do seu servidor:
    - adicionar um úsuario
    - atualizar as informações dele
    - e apagalo
-6. Abra o test.http (está dentro da pasta src) e cole esse código
+5. Abra o test.http (está dentro da pasta src) e cole esse código
 ```http
 POST http://localhost:1111/users HTTP/1.1
 content-type: application/json
@@ -224,36 +206,27 @@ content-type: application/json
 
 DELETE http://localhost:1111/users/1 HTTP/1.1
 ```
-7. Se vc prestar atenção, em cima do POST, PUT e DELETE, temos duas palavrinhas "Send Request". Elas não estão ali por acaso. Elas só aparecem se vc tiver instalado aquela extensão que eu falei(REST Client)
+7. Se vc prestar atenção, em cima do **POST**, **PUT** e **DELETE**, temos duas palavrinhas "Send Request". (Elas só aparecem se vc tiver instalado aquela extensão que eu falei(REST Client)) Se não instalou, volte um pouco atrás.
 
 ## Vamos testar agora
 1. Clique no "Send Request" que está acima do `POST`
 2. Vc acabou de dizer pro servidor: "mano, existe uma cara chamado "John Doe" e o email dele é "johndoe@mail.com"
-3. Verifique se foi enviado ou não essa mensagem, acessando esse link:
-```sh
-http://localhost:1111/users
-```
+3. Verifique se foi enviado ou não essa mensagem, acessando esse link: (http://localhost:1111/users)
 4. Clique no "Send Request" que está acima do `PUT`
-- Vc acabou de dizer pro servidor: "mano, lembra daquele cara "Jonh Doe"? É.... eu me confundi, ele n se chama assim, o nome dele real é John Doe Updated, bizzano né😳"
-- Verifique se mudou o nome dele [atualize á pagina]:
-```sh
-http://localhost:1111/users
-```
-- Por fim, clique no ultimo "Send Request", que está acima do `DELETE`
-- Após ter feito isso, vc disse pro servidor: "mano, o Jonh, ele foi de vasco, bateu as botas, foi de americanas. DELETE ele do banco de dados.
-- Verifique se ele já n existe mais [atualize á pagina]:
-```sh
-http://localhost:3333/users
-```
+5. Vc acabou de dizer pro servidor: "mano, lembra daquele cara "Jonh Doe"? É.... eu me confundi, ele n se chama assim, o nome dele real é John Doe Updated, bizzano né😳"
+6. Verifique se mudou o nome dele [atualize á pagina]: (http://localhost:1111/users)
+7. Clique no ultimo "Send Request", que está acima do `DELETE`
+8. Após ter feito isso, vc disse pro servidor: "mano, o Jonh, ele MORREU, DELETE ele do banco de dados.
+9. Verifique se ele já n existe mais [atualize á pagina]: (http://localhost:3333/users)
 
-## Agora vamos adicionar o FrontEnd
-1. Crie uma pasta chamada: `public` pelo vscode ou com o comando abaixo:
+## Agora vamos adicionar algo visual
+1. Crie uma pasta chamada: `public` pelo vscode ou com o comando abaixo 👇 [tem q ser dentro da pasta "projeto"]:
 ```sh
 mkdir public
 ```
-3. E crie um arquivo html chamado "index.html" dentro da pasta public. Deve ficar assim 👇
+2. E crie um arquivo html chamado "index.html" dentro da pasta public. Deve ficar assim 👇
 ![public](./imgs/public.png).
-4. E cole esse código 👇
+3. E cole esse código 👇
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -336,4 +309,6 @@ mkdir public
 </body>
 </html>
 ```
-5. **E FINALMENTE** Acesse esse link: `http://localhost:1111`. E teste os botões, adicione pessoas e removas elas. 😊
+4. Salve o arquivo.
+5. **E FINALMENTE** Acesse esse link: (http://localhost:1111/). E teste os botões, adicione pessoas e remova-as, teste tudo ai e parabéns😊👍
+
