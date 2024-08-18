@@ -176,7 +176,7 @@ app.delete('/users/:id', async (req, res) => {
 npm run dev
 ```
 > Se vc fechou, ainda há esperanças. Clique nessas teclas: **CTRL** + **'** . Ou pesquise como abrir o "terminal" dentro do vscode
-2. Clique nesse link: (http://localhost:1111/)
+2. **IMPORTANTE**, abra outra guia e cole esse link: (http://localhost:1111/)
 3. Vc vai ver uma tela branca e bem no cantinho superior duas palavras: "Hello Word"
 4. Agora teste algumas funções do seu servidor:
    - adicionar um úsuario
@@ -211,13 +211,13 @@ DELETE http://localhost:1111/users/1 HTTP/1.1
 ## Vamos testar agora
 1. Clique no "Send Request" que está acima do `POST`
 2. Vc acabou de dizer pro servidor: "mano, existe uma cara chamado "John Doe" e o email dele é "johndoe@mail.com"
-3. Verifique se foi enviado ou não essa mensagem, acessando esse link: (http://localhost:1111/users)
+3. Verifique se foi enviado ou não essa mensagem, abra outra guia e cole esse link: (http://localhost:1111/users)
 4. Clique no "Send Request" que está acima do `PUT`
 5. Vc acabou de dizer pro servidor: "mano, lembra daquele cara "Jonh Doe"? É.... eu me confundi, ele n se chama assim, o nome dele real é John Doe Updated, bizzano né😳"
-6. Verifique se mudou o nome dele [atualize á pagina]: (http://localhost:1111/users)
+6. Verifique se mudou o nome dele [atualize á pagina] ou abra outra guia e cole esse link: (http://localhost:1111/users)
 7. Clique no ultimo "Send Request", que está acima do `DELETE`
 8. Após ter feito isso, vc disse pro servidor: "mano, o Jonh, ele MORREU, DELETE ele do banco de dados.
-9. Verifique se ele já n existe mais [atualize á pagina]: (http://localhost:3333/users)
+9. Verifique se ele já n existe mais [atualize á pagina] ou abra outra guia e cole esse link: (http://localhost:3333/users)
 
 ## Agora vamos adicionar algo visual
 1. Crie uma pasta chamada: `public` pelo vscode ou com o comando abaixo 👇 [tem q ser dentro da pasta "projeto"]:
@@ -310,5 +310,5 @@ mkdir public
 </html>
 ```
 4. Salve o arquivo.
-5. **E FINALMENTE** Acesse esse link: (http://localhost:1111/){target="_blank"} . E teste os botões, adicione pessoas e remova-as, teste tudo ai e parabéns😊👍
+5. **E FINALMENTE** Acesse esse link: (http://localhost:1111/). E teste os botões, adicione pessoas e remova-as, teste tudo ai e parabéns😊👍
 
