@@ -220,10 +220,7 @@ DELETE http://localhost:1111/users/1 HTTP/1.1
 9. Verifique se ele já n existe mais [atualize á pagina] ou abra outra guia e cole esse link: (http://localhost:1111/users)
 
 ## Agora vamos adicionar algo visual
-1. Crie uma pasta chamada: `public` pelo vscode ou com o comando abaixo 👇 [tem q ser dentro da pasta "projeto"]:
-```sh
-mkdir public
-```
+1. Crie uma pasta chamada: `public` pelo vscode [tem q ser dentro da pasta "projeto"]:
 2. E crie um arquivo html chamado "index.html" dentro da pasta public. Deve ficar assim 👇
 ![public](./imgs/public.png).
 3. E cole esse código 👇
