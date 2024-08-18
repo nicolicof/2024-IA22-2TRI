@@ -310,5 +310,5 @@ mkdir public
 </html>
 ```
 4. Salve o arquivo.
-5. **E FINALMENTE** Acesse esse link: (http://localhost:1111/). E teste os botões, adicione pessoas e remova-as, teste tudo ai e parabéns😊👍
+5. **E FINALMENTE** abra outra guia e cole esse link: (http://localhost:1111/). E teste os botões, adicione pessoas e remova-as, teste tudo ai e parabéns😊👍
 
