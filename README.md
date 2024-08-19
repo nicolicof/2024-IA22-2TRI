@@ -1,59 +1,76 @@
 # 2024-IA22-2TRI
-Bom dia, vamos fazer um projeto.
+Vamos fazer um projeto.
 
 Se você quizer terminar mais rápido:
-- **NÃO FECHE NENHUMA JANELA** que você abrir.
-- **SEMPRE SALVE OS ARQUIVOS** com CTRL+s
+
+**NÃO ABRA O VSCODE POR CONTA PRÓPRIA**
+**NÃO FECHE NENHUMA JANELA** que você abrir;
+**SEMPRE SALVE OS ARQUIVOS** com *CTRL+S*;
 
 # ALGUNS PRÉ-REQUISITOS
-1. Antes de começar o projeto verifique se o programa Node está instalado.
-    1. Busque por "cmd" no Windows.[No linux "terminal"] Vai ser aberta essa janela👇 
+1. Verifique se o programa Node está instalado.
+
+    1. Busque por "cmd" no Windows. Vai abrir essa janela👇 
     ![Terminal](./imgs/terminal.png)
+
     2. **NUNCA FECHE ESSA JANELA PELO AMOR DE DEUS**
-    3. Agora copie e cole esse código abaixo👇 e aperte ENTER:
-    ```sh
+
+    3. Copie e cole esse código abaixo👇 e aperte ENTER:
+    ```
     node -v
     ```
+    
     4. Deve aparecer a versão do node, talvez n seja igual como esta na imagem, mas n importa:
     ![node_version](./imgs/nodev.png)
 
-2. Ainda no cmd, com o comando abaixo👇, vamos criar uma pasta e entrar nela:
-```sh
+
+1. Ainda no cmd, rode o comando abaixo👇
+```
 mkdir projeto && cd projeto
 ```
-3. Inicie o projeto👇
+
+2. Inicie o projeto👇
 ```
 npm init -y
 ```
-4. Intale alguns pacotes, rode o comando abaixo(Pode demorar uns segundos):
-```sh
+
+3. Instale alguns pacotes👇 **[VAI DEMORAR UM POUCO]**
+```
 npm install express cors sqlite3 sqlite
 ```
+
 5. Instale mais pacotes👇
-```typescript
+```
 npm install --save-dev typescript nodemon ts-node @types/express @types/cors
 ```
-6. Crie o arquivo de configuração para o typescript
-```typescript
+
+6. Rode o comando abaixo👇 para criar o arquivo de configuração
+```
 npx tsc --init
 ```
-6. Crie uma pasta chamada `src`
-```typescript
+
+6. Rode o comando abaixo👇
+```
 mkdir src
 ```
-7. Agora rode o comando abaixo para o vscode abrir diretamente no seu projeto. **NÃO FECHE O CMD**
-```typescript
+
+7. Rode o comando abaixo👇 para abrir o vscode. **VAI DEMORAR UM POUCO**. *[Não feche o cmd ainda, vamos usa-lo mais tarde]*
+```
 code .
 ```
+
 # HORA DE COMEÇARMOS O PROJETO
 Se tudo tiver ocorrido bem, vc vai ver o vscode assim:
 ![vscode](./imgs/code.png)
 
-1. Crie um arquivo dentro da pasta "src" e nomeie ele assim: `app.ts`
+1. Crie um arquivo dentro da pasta "src" e nomeie ele assim: `app.ts`👇
 ![app.ts](./imgs/appts.png)
 
-2. Abra o arquivo **tsconfig.json**. APAGUE TODO O CÓDIGO DENTRO DELE.
-3. Depois de apagar, copie o código abaixo e cole
+2. Abra o arquivo **tsconfig.json**
+
+3. *APAGUE TODO O CÓDIGO*
+
+4. Depois de apagar, copie o código abaixo👇 e cole
 ```json
 {
   "compilerOptions": {
@@ -68,17 +85,18 @@ Se tudo tiver ocorrido bem, vc vai ver o vscode assim:
   }
 }
 ```
-4. Abra o arquivo `package.json` e procure por "scripts" e adicione esse código abaixo(siga a imagem):
-```json
-"dev": "npx nodemon src/app.ts",
-```
-Deve ficar assim👇 OBS: Salve as mudanças com CTRL+S
+
+5. Abra o arquivo "package.json"
+
+6. Copie esse código: `"dev": "npx nodemon src/app.ts",`
+
+7. Olhe pra essa imagem👇. E deixe o seu código igual a ela
 ![package.json](./imgs/package.png)
 
-5. Crie um arquivo chamado "database.ts" dentro da pasta "src" 👇
+8. Crie um arquivo chamado `database.ts` dentro da pasta "src" 👇
 ![database-ts](./imgs/database-ts.png)
 
-6. E cole esse código:
+9. E cole esse código, dentro do `database.ts`:
 ```typescript
 import { open } from 'sqlite';
 import sqlite3 from 'sqlite3';
@@ -106,7 +124,7 @@ export async function connect() {
 }
 ```
 
-7. Abra o `app.ts` que vc criou dentro da pasta "src" e cole o código abaixo👇
+10. Abra o `app.ts` que vc criou dentro da pasta "src" e cole o código abaixo👇
 ```typescript
 import express from 'express';
 import cors from 'cors';
@@ -165,24 +183,28 @@ app.delete('/users/:id', async (req, res) => {
   res.json({ message: 'User deleted' });
 });
 ```
+
 # ESTÁ PERTO DO FIM...
 1. Crie um arquivo dentro da pasta "src" chamado `test.http`
+
 2. E instale uma extensão no seu vscode chamada "REST Client". Tutorial fodão abaixo👇
 ![extension](./imgs/extension.png)
+
 ---
 # Agora vamos rodar e testar o nosso servidor
+
 1. Naquele cmd que vc n fechou. Cole e rode esse comando:
 ```sh
 npm run dev
 ```
-> Se vc fechou, ainda há esperanças. Clique nessas teclas: **CTRL** + **'** . Ou pesquise como abrir o "terminal" dentro do vscode
-2. **IMPORTANTE**, abra outra guia e cole esse link: (http://localhost:1111/)
+
+> Se vc fechou, ainda há esperanças. Clique nessas teclas: **CTRL** + **"** . Ou pesquise como abrir o "terminal" dentro do vscode
+
+2. Pesquise esse link: `http://localhost:1111/`
+
 3. Vc vai ver uma tela branca e bem no cantinho superior duas palavras: "Hello Word"
-4. Agora teste algumas funções do seu servidor:
-   - adicionar um úsuario
-   - atualizar as informações dele
-   - e apagalo
-5. Abra o test.http (está dentro da pasta src) e cole esse código
+
+4. Abra o `test.http` e cole esse código
 ```http
 POST http://localhost:1111/users HTTP/1.1
 content-type: application/json
@@ -198,31 +220,36 @@ PUT http://localhost:1111/users/1 HTTP/1.1
 content-type: application/json
 
 {
-  "name": "John Doe Updated",
-  "email": "johndoe@mail.com"
+  "name": "Thomas Turbando",
+  "email": "thomas@mail.com"
 }
 
 ####
 
 DELETE http://localhost:1111/users/1 HTTP/1.1
 ```
-7. Se vc prestar atenção, em cima do **POST**, **PUT** e **DELETE**, temos duas palavrinhas "Send Request". (Elas só aparecem se vc tiver instalado aquela extensão que eu falei(REST Client)) Se não instalou, volte um pouco atrás.
+
+7. Em cima do **POST**, **PUT** e **DELETE**, temos duas palavrinhas "Send Request". *(Elas só aparecem se vc tiver instalado aquela extensão que eu falei(REST Client). Se não instalou, INSTALE AGORA*
 
 ## Vamos testar agora
 1. Clique no "Send Request" que está acima do `POST`
-2. Vc acabou de dizer pro servidor: "mano, existe uma cara chamado "John Doe" e o email dele é "johndoe@mail.com"
-3. Verifique se foi enviado ou não essa mensagem, abra outra guia e cole esse link: (http://localhost:1111/users)
-4. Clique no "Send Request" que está acima do `PUT`
-5. Vc acabou de dizer pro servidor: "mano, lembra daquele cara "Jonh Doe"? É.... eu me confundi, ele n se chama assim, o nome dele real é John Doe Updated, bizzano né😳"
-6. Verifique se mudou o nome dele [atualize á pagina] ou abra outra guia e cole esse link: (http://localhost:1111/users)
-7. Clique no ultimo "Send Request", que está acima do `DELETE`
-8. Após ter feito isso, vc disse pro servidor: "mano, o Jonh, ele MORREU, DELETE ele do banco de dados.
-9. Verifique se ele já n existe mais [atualize á pagina] ou abra outra guia e cole esse link: (http://localhost:1111/users)
 
-## Agora vamos adicionar algo visual
-1. Crie uma pasta chamada: `public` pelo vscode [tem q ser dentro da pasta "projeto"]:
-2. E crie um arquivo html chamado "index.html" dentro da pasta public. Deve ficar assim 👇
+2. Pesquise esse link: `http://localhost:1111/users`. E verifique se aparece o nome: `Jonh Doe` e o email: `johndoe@mail.com`
+
+4. Clique no "Send Request" que está acima do `PUT`
+
+5. Atualize a página `localhost`. E verifique se aparece o nome: `Thomas Turbando` e o email: `thomas@mail.com`
+
+7. Clique no ultimo "Send Request", que está acima do `DELETE`
+
+8. Atualize a página `localhost`. E verifique se sumiu tudo
+
+## Agora vamos adicionar botões, etc..
+1. Crie uma pasta chamada: `public` [tem q ser dentro da pasta "projeto"]:
+
+2. Crie um arquivo chamado: `index.html"` dentro da pasta public. Deve ficar assim 👇
 ![public](./imgs/public.png).
+
 3. E cole esse código 👇
 ```html
 <!DOCTYPE html>
@@ -307,5 +334,7 @@ DELETE http://localhost:1111/users/1 HTTP/1.1
 </html>
 ```
 4. Salve o arquivo.
-5. **E FINALMENTE** abra outra guia e cole esse link: (http://localhost:1111/). E teste os botões, adicione pessoas e remova-as, teste tudo ai e parabéns😊👍
 
+5. **E FINALMENTE** abra outra guia e cole esse link: `http://localhost:1111/`. E teste os botões, adicione pessoas e remova-as, teste tudo ai e parabéns😊👍
+
+Um jogo daorinha pra jogar: (https://therace.montblancexplorer.com/)
