@@ -14,9 +14,9 @@ Se você quizer terminar mais rápido:
     
     ![Terminal](./imgs/terminal.png)
 
-    3. **NUNCA FECHE ESSA JANELA PELO AMOR DE DEUS**
+    2. **NUNCA FECHE ESSA JANELA PELO AMOR DE DEUS**
 
-    4. Copie e cole esse código abaixo👇 e aperte ENTER:
+    3. Copie e cole esse código abaixo👇 e aperte ENTER:
     ```
     node -v
     ```
@@ -41,12 +41,12 @@ npm init -y
 npm install express cors sqlite3 sqlite
 ```
 
-5. Instale mais pacotes👇
+4. Instale mais pacotes👇
 ```
 npm install --save-dev typescript nodemon ts-node @types/express @types/cors
 ```
 
-6. Rode o comando abaixo👇 para criar o arquivo de configuração
+5. Rode o comando abaixo👇 para criar o arquivo de configuração
 ```
 npx tsc --init
 ```
