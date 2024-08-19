@@ -3,9 +3,9 @@ Vamos fazer um projeto.
 
 Se você quizer terminar mais rápido:
 
-**NÃO ABRA O VSCODE POR CONTA PRÓPRIA**
-**NÃO FECHE NENHUMA JANELA** que você abrir;
-**SEMPRE SALVE OS ARQUIVOS** com *CTRL+S*;
+1. **NÃO ABRA O VSCODE POR CONTA PRÓPRIA**
+2. **NÃO FECHE NENHUMA JANELA** que você abrir
+3. **SEMPRE SALVE OS ARQUIVOS** com *CTRL+S*
 
 # ALGUNS PRÉ-REQUISITOS
 1. Verifique se o programa Node está instalado.
