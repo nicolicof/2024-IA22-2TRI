@@ -254,7 +254,7 @@ DELETE http://localhost:1111/users/1 HTTP/1.1
 ## Agora vamos adicionar botões, etc..
 1. Crie uma pasta chamada: `public` [tem q ser dentro da pasta "projeto"]:
 
-2. Crie um arquivo chamado: `index.html"` dentro da pasta public. Deve ficar assim 👇
+2. Crie um arquivo chamado: `index.html` dentro da pasta public. Deve ficar assim 👇
 
 ![public](./imgs/public.png).
 
