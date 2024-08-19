@@ -10,17 +10,19 @@ Se você quizer terminar mais rápido:
 # ALGUNS PRÉ-REQUISITOS
 1. Verifique se o programa Node está instalado.
 
-    1. Busque por "cmd" no Windows. Vai abrir essa janela👇 
+    1. Busque por "cmd" no Windows. Vai abrir essa janela👇
+    
     ![Terminal](./imgs/terminal.png)
 
-    2. **NUNCA FECHE ESSA JANELA PELO AMOR DE DEUS**
+    3. **NUNCA FECHE ESSA JANELA PELO AMOR DE DEUS**
 
-    3. Copie e cole esse código abaixo👇 e aperte ENTER:
+    4. Copie e cole esse código abaixo👇 e aperte ENTER:
     ```
     node -v
     ```
     
     4. Deve aparecer a versão do node, talvez n seja igual como esta na imagem, mas n importa:
+    
     ![node_version](./imgs/nodev.png)
 
 
@@ -61,9 +63,11 @@ code .
 
 # HORA DE COMEÇARMOS O PROJETO
 Se tudo tiver ocorrido bem, vc vai ver o vscode assim:
+
 ![vscode](./imgs/code.png)
 
 1. Crie um arquivo dentro da pasta "src" e nomeie ele assim: `app.ts`👇
+
 ![app.ts](./imgs/appts.png)
 
 2. Abra o arquivo **tsconfig.json**
@@ -91,9 +95,11 @@ Se tudo tiver ocorrido bem, vc vai ver o vscode assim:
 6. Copie esse código: `"dev": "npx nodemon src/app.ts",`
 
 7. Olhe pra essa imagem👇. E deixe o seu código igual a ela
+
 ![package.json](./imgs/package.png)
 
 8. Crie um arquivo chamado `database.ts` dentro da pasta "src" 👇
+
 ![database-ts](./imgs/database-ts.png)
 
 9. E cole esse código, dentro do `database.ts`:
@@ -188,6 +194,7 @@ app.delete('/users/:id', async (req, res) => {
 1. Crie um arquivo dentro da pasta "src" chamado `test.http`
 
 2. E instale uma extensão no seu vscode chamada "REST Client". Tutorial fodão abaixo👇
+
 ![extension](./imgs/extension.png)
 
 ---
@@ -248,6 +255,7 @@ DELETE http://localhost:1111/users/1 HTTP/1.1
 1. Crie uma pasta chamada: `public` [tem q ser dentro da pasta "projeto"]:
 
 2. Crie um arquivo chamado: `index.html"` dentro da pasta public. Deve ficar assim 👇
+
 ![public](./imgs/public.png).
 
 3. E cole esse código 👇
